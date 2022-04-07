@@ -1,0 +1,49 @@
+@import './reset.scss';
+@import './variables.scss';
+@import './mixins.scss';
+
+@font-face {
+    font-family: 'RIDIBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    font-family: 'RIDIBatang';
+}
+header{
+    height: 48px;
+    background-color: $gray-100;
+    @include positions(fixed, 0, 0, unset, 0);
+}
+
+main{
+    margin-top: 48px;
+    margin-left: 240px;
+    padding: 16px;
+    >div{
+        // border: 1px solid $gray-100;
+        // border-radius: 8px;
+        // height: calc(100vh - 80px);
+        // box-shadow: 0 2px 4px 0 rgb(0 0 0 / 32%);
+        // padding: 8px;
+    }
+    
+}
+
+ul.main-menu{
+    @include positions(fixed, 48px, unset, 0, 0);
+    width: 240px;
+    border-right: 1px solid $gray-100;
+    li{
+        padding: 16px 8px;
+        border-top: 1px solid $gray-100;
+        cursor: pointer;
+        color: $gray-400;
+
+        &.active{
+            background-color: $gray-400;
+            color: #FFFFFF;
+        }
+    }
+}

@@ -1,0 +1,80 @@
+@mixin size($width, $height) {
+    width: $width;
+    height: $height
+}
+
+@mixin positions($position, $top: unset, $right: unset, $bottom: unset, $left: unset) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin flexs($col:unset, $row:unset, $direction:unset, $wrap:unset) {
+    display: flex;
+    align-items: $col; //정렬
+    justify-content: $row; //가로 정렬
+    flex-direction: $direction; //세로
+    flex-wrap: $wrap;
+}
+
+@mixin flexs-align($col:center, $row:center) {
+    display: flex;
+    align-items: $col; //정렬
+    justify-content: $row; //가로 정렬
+}
+
+@mixin flexs-direction($direction:column, $wrap:unset) {
+    //줄바꿈  @include flexs-direction(row, wrap)
+    display: flex;
+    flex-direction: $direction; //세로
+    flex-wrap: $wrap;
+}
+
+@mixin bg($size, $x: center, $y: center) {
+    background-size: $size;
+    background-position-x: $x;
+    background-position-y: $y;
+    background-repeat: no-repeat;
+}
+
+@mixin border-radius($tl: 0,$tr: 0,$br: 0,$bl: 0){
+    border-top-left-radius: $tl;
+    border-top-right-radius: $tr;
+    border-bottom-right-radius: $br;
+    border-bottom-left-radius: $bl;
+}
+
+@mixin user-select($select: none) {
+    -webkit-user-select: $select;
+    -moz-user-select: $select;
+    -ms-user-select: $select;
+    user-select: $select;
+}
+
+@mixin ellipsis(){
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+
+@mixin mobile {
+  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+    @media (max-width: #{$breakpoint-tablet}) {
+    // @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
