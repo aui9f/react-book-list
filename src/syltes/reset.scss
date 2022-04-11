@@ -47,6 +47,11 @@
      background:transparent;
      line-height: 1.4em;
  }
+ a {text-decoration: none; outline: none}
+
+ a:hover, a:active {text-decoration: none;}
+
+
 
  p{
     line-height: 1.4em;

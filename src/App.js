@@ -7,7 +7,7 @@ import BookList from './routes/BookList'
 import Review from './routes/Review'
 
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route
 } from "react-router-dom";
@@ -17,21 +17,22 @@ import MainMenu from './components/MainMenu';
 function App() {
   return (
     <div>
-      <Header/>
-      <MainMenu/>
+     
 
       <main>
-      <Router>
-      <Switch>
+      <BrowserRouter >
+      <Header/>
+      <MainMenu/>
+        <Switch>
 
-      
-      <Route path="/about"><About/></Route>
-      <Route path="/booklist"><BookList/></Route>
-      <Route path="/review"><Review/></Route>
-      <Route path="/"><Home/></Route>
+        
+        <Route path="/about"><About/></Route>
+        <Route path="/booklist"><BookList/></Route>
+        <Route path="/review"><Review/></Route>
+        <Route path="/"><Home/></Route>
 
-      </Switch>
-    </Router>
+        </Switch>
+    </BrowserRouter >
       </main>
     </div>
   );

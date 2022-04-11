@@ -21,13 +21,6 @@ main{
     margin-top: 48px;
     margin-left: 240px;
     padding: 16px;
-    >div{
-        // border: 1px solid $gray-100;
-        // border-radius: 8px;
-        // height: calc(100vh - 80px);
-        // box-shadow: 0 2px 4px 0 rgb(0 0 0 / 32%);
-        // padding: 8px;
-    }
     
 }
 
@@ -39,11 +32,61 @@ ul.main-menu{
         padding: 16px 8px;
         border-top: 1px solid $gray-100;
         cursor: pointer;
-        color: $gray-400;
+        a{
+            color: $gray-400;
+        }
 
         &.active{
             background-color: $gray-400;
             color: #FFFFFF;
+        }
+    }
+}
+
+
+.review{
+    >ul{
+        >li{
+            border-bottom: 1px solid gray;
+            padding: 16px;
+            >div{
+                display: flex;
+                .img{
+                    width: 123px;
+                    height: 180px;
+                    background-color: gray;
+                    margin-right: 8px;
+                }
+
+                .txt{
+                    display: flex;
+                    flex-direction: column;
+                    padding: 8px;
+                    .book-info{
+                        flex: 1;
+                        margin-bottom: 8px;
+                        h4{
+                            color: blue;
+                        }
+                        >p{
+                            margin-top: 4px;
+                            color: gray;
+                        }
+                    }
+
+                    .user-info{
+                        .star{
+                            color: red;
+                            margin-bottom: 4px;
+                        }
+                        p{
+                            font-size: 80%;
+                        }
+                    }
+
+                    
+                }
+            }
         }
     }
 }
